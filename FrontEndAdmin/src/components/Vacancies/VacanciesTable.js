@@ -35,6 +35,7 @@ function VacanciesTable() {
     description: "",
     deadline: "",
   });
+  const [sortOrder, setSortOrder] = useState("asc"); // "asc" for ascending, "desc" for descending
 
   useEffect(() => {
     axios
@@ -100,14 +101,26 @@ function VacanciesTable() {
       });
   };
 
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+  };
+
+  // Sort the filtered vacancies based on the deadline
+  const sortedVacancies = [...filteredVacancies].sort((a, b) => {
+    if (sortOrder === "asc") {
+      return new Date(a.deadline) - new Date(b.deadline);
+    } else {
+      return new Date(b.deadline) - new Date(a.deadline);
+    }
+  });
   return (
     <Container>
       {data.length === 0 ? (
         <div>
-        <h4 className="text-center my-5">
-          No vacancies available at the moment
-        </h4>
-        <Row className="my-4 text-center my-5">
+          <h4 className="text-center my-5">
+            No vacancies available at the moment
+          </h4>
+          <Row className="my-4 text-center my-5">
             <Col md="12">
               <Link to="/AddVacancy">
                 <Button className="btn-orange">Add a Job Vacancy</Button>
@@ -115,7 +128,6 @@ function VacanciesTable() {
             </Col>
           </Row>
         </div>
-
       ) : (
         <div>
           <Row className="my-4">
@@ -140,7 +152,7 @@ function VacanciesTable() {
               </Link>
             </Col>
           </Row>
-
+  
           <Table responsive>
             <thead>
               <tr>
@@ -150,13 +162,27 @@ function VacanciesTable() {
                     style={{ whiteSpace: "nowrap", textAlign: "center" }}
                     key={index}
                   >
-                    {heading}
+                    {heading === "Deadline" ? (
+                      <span
+                        onClick={toggleSortOrder}
+                        style={{ cursor: "pointer" }}
+                      >
+                        {heading}{" "}
+                        {sortOrder === "asc" ? (
+                          <i className="fa-solid fa-arrow-up"></i>
+                        ) : (
+                          <i className="fa-solid fa-arrow-down"></i>
+                        )}
+                      </span>
+                    ) : (
+                      heading
+                    )}
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {filteredVacancies.map((vacancy, index) => (
+              {sortedVacancies.map((vacancy, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td style={{ whiteSpace: "nowrap", textAlign: "center" }}>
@@ -206,9 +232,9 @@ function VacanciesTable() {
                       className="fa-solid fa-trash"
                       style={{ color: "#FF0000", cursor: "pointer" }}
                       onClick={() => {
-                        setDeleteCandidateId(vacancy._id); // Set the candidate ID to delete
+                        setDeleteCandidateId(vacancy._id);
                         setShowAlert(true);
-                        setDeleteCandidateTitle(vacancy.title); // Set the candidate title to display in the confirmation alert
+                        setDeleteCandidateTitle(vacancy.title);
                       }}
                     ></i>
                   </td>
@@ -231,7 +257,7 @@ function VacanciesTable() {
               ))}
             </tbody>
           </Table>
-          {/* Confirmation Alert */}
+  
           {showAlert && (
             <div className="confirmation-alert">
               <p>
@@ -247,8 +273,8 @@ function VacanciesTable() {
               <button
                 className="cancel-button"
                 onClick={() => {
-                  setDeleteCandidateId(null); // Reset the candidate ID
-                  setShowAlert(false); // Hide the confirmation alert
+                  setDeleteCandidateId(null);
+                  setShowAlert(false);
                 }}
               >
                 Cancel
@@ -259,5 +285,6 @@ function VacanciesTable() {
       )}
     </Container>
   );
+  
 }
 export default VacanciesTable;

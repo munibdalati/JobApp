@@ -85,7 +85,7 @@ function FormComponent() {
       console.log(response.data.token);
       console.log(response.data);
 
-      navigate("/");
+      navigate("/Confirmation");
     } catch (err) {
       if (err.response) {
         // The request was made and the server responded with a status code
@@ -109,7 +109,7 @@ function FormComponent() {
 
   useEffect(() => {
     if (localStorage.getItem("auth_token")) {
-      navigate("/");
+      navigate("/Confirmation");
     }
   }, []);
 

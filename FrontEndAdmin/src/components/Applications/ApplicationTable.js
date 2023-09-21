@@ -25,6 +25,7 @@ function ApplicationTable() {
     "Years of Experience",
     "CV",
     "Notes",
+    "Date Applied",
     "Delete",
   ];
 
@@ -74,6 +75,16 @@ function ApplicationTable() {
     }
   };
 
+    // Function to format date and time
+    const formatDateTime = (dateTime) => {
+      const dateObj = new Date(dateTime);
+      const hour = dateObj.getUTCHours().toString().padStart(2, "0");
+      const minute = dateObj.getUTCMinutes().toString().padStart(2, "0");
+      const day = dateObj.getUTCDate().toString().padStart(2, "0");
+      const month = (dateObj.getUTCMonth() + 1).toString().padStart(2, "0");
+      const year = dateObj.getUTCFullYear();
+      return ` ${day}/${month}/${year} - ${hour}:${minute}`;
+    };
   return (
     <Container>
     {data.length === 0 ? (
@@ -164,6 +175,9 @@ function ApplicationTable() {
               <td style={{ whiteSpace: "nowrap", textAlign: "center" }}>
                 {application.notes}
               </td>
+              <td style={{ whiteSpace: "nowrap", textAlign: "center" }}>
+                    {formatDateTime(application.createdAt)}
+                  </td>
               <td style={{ whiteSpace: "nowrap", textAlign: "center" }}>
                 <i
                   class="fa-solid fa-trash"

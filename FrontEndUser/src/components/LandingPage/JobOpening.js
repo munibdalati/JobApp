@@ -49,7 +49,7 @@ function JobOpening() {
                   </Card.Text>
                   <Link to={`/PersonalInfo/${job.title}`}>
                     <Button className="Careerly__btn">Apply Now</Button>
-                  </Link>{" "}
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
