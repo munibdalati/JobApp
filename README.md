@@ -47,7 +47,7 @@ npm start
 webpack compiled successfully
 ```
 
-## Third terminal / FrontEndAdmin
+## Third terminal / FrontEndUser
 
 1. Open another terminal
 
