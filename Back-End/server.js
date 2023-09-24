@@ -28,7 +28,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use("/api/private", require("./routes/private"));
 app.use("/api/application", applicationRoutes);
 app.use("/api/vacancy", vacancyRoutes);
 
