@@ -6,6 +6,7 @@ const applicationRoutes = require("./routes/applicationRoutes");
 const vacancyRoutes = require("./routes/vacancyRoutes");
 
 const cors = require("cors");
+const path = require("path");
 
 // express app
 const app = express();
@@ -18,6 +19,7 @@ connectDB();
 
 // Middleware
 app.use(express.json());
+app.use(express.static(path.join(__dirname + "/public")));
 
 // Routes
 app.use(function(req, res, next) {
@@ -33,8 +35,8 @@ app.use("/api/vacancy", vacancyRoutes);
 
 
 // Port
-const PORT = 5000;
+const PORT = 8000 || process.env.PORT;
 
-const server = app.listen(PORT, () =>
+const server = app.listen(PORT , () =>
   console.log(`Server running on port ${PORT}`)
 );
