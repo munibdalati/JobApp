@@ -60,7 +60,7 @@ function FormComponent() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/application/addApplication",
+        "http://localhost:8000/api/application/addApplication",
         {
           title,
           firstName,

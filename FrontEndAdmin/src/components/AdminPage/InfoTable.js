@@ -34,7 +34,7 @@ function InfoTable() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/application/allApplications")
+      .get("http://localhost:8000/api/application/allApplications")
       .then((res) => {
         setData(res.data.data.applications);
       })

@@ -35,7 +35,7 @@ function VacancyForm() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/vacancy/addVacancy",
+        "http://localhost:8000/api/vacancy/addVacancy",
         { title, description, deadline },
         config
       );

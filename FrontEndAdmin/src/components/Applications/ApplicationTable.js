@@ -42,7 +42,7 @@ function ApplicationTable() {
   // useEffect to get all the Applications
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/application/allApplications")
+      .get("http://localhost:8000/api/application/allApplications")
       .then((res) => {
         setData(res.data.data.applications);
       })
@@ -60,7 +60,7 @@ function ApplicationTable() {
   const deleteApplication = async (id) => {
     try {
       await axios.delete(
-        "http://localhost:5000/api/application/deleteApplication/" + id,
+        "http://localhost:8000/api/application/deleteApplication/" + id,
         {
           data: { application: id },
         }

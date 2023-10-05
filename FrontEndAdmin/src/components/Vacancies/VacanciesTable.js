@@ -39,7 +39,7 @@ function VacanciesTable() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/vacancy/allVacancies")
+      .get("http://localhost:8000/api/vacancy/allVacancies")
       .then((res) => {
         setData(res.data.data.vacancies);
       })
@@ -57,7 +57,7 @@ function VacanciesTable() {
   const deleteVacancy = async (id) => {
     try {
       await axios.delete(
-        "http://localhost:5000/api/vacancy/deleteVacancy/" + id,
+        "http://localhost:8000/api/vacancy/deleteVacancy/" + id,
         {
           data: { vacancy: id },
         }
@@ -83,7 +83,7 @@ function VacanciesTable() {
 
   const handleSave = () => {
     axios
-      .put(`http://localhost:5000/api/vacancy/updateVacancy/${editData.id}`, {
+      .put(`http://localhost:8000/api/vacancy/updateVacancy/${editData.id}`, {
         title: editData.title,
         description: editData.description,
         deadline: editData.deadline,
