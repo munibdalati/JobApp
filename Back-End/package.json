@@ -2,10 +2,10 @@
   "name": "jobapp",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "npx nodemon server.js",
-    "server": "nodemon server.js"
+    "start": "npx nodemon index.js",
+    "server": "nodemon index.js"
   },
   
   "keywords": [],
