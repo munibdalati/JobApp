@@ -39,7 +39,7 @@ function VacanciesTable() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/vacancy/allVacancies")
+      .get("https://job-app-api-alpha.vercel.app/api/vacancy/allVacancies")
       .then((res) => {
         setData(res.data.data.vacancies);
       })
@@ -57,7 +57,7 @@ function VacanciesTable() {
   const deleteVacancy = async (id) => {
     try {
       await axios.delete(
-        "http://localhost:8000/api/vacancy/deleteVacancy/" + id,
+        "https://job-app-api-alpha.vercel.app/api/vacancy/deleteVacancy/" + id,
         {
           data: { vacancy: id },
         }
