@@ -83,7 +83,7 @@ function VacanciesTable() {
 
   const handleSave = () => {
     axios
-      .put(`http://localhost:8000/api/vacancy/updateVacancy/${editData.id}`, {
+      .put(`https://job-app-api-alpha.vercel.app/api/vacancy/updateVacancy/${editData.id}`, {
         title: editData.title,
         description: editData.description,
         deadline: editData.deadline,

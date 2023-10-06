@@ -35,7 +35,7 @@ function VacancyForm() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/vacancy/addVacancy",
+        "https://job-app-api-alpha.vercel.app/api/vacancy/addVacancy",
         { title, description, deadline },
         config
       );
