@@ -16,7 +16,7 @@ const app = express();
 // Configure CORS
 app.use(cors(
   {
-    origin:['https://job-app-admin.vercel.app/'],
+    origin:['https://job-app-admin.vercel.app'],
     methods:['GET', 'POST'],
     credentials:true
   }
