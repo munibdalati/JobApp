@@ -34,7 +34,7 @@ function InfoTable() {
 
   useEffect(() => {
     axios
-      .get("https://job-app-api-alpha.vercel.app/api/application/allApplications")
+      .get("https://localhost:8000/api/application/allApplications")
       .then((res) => {
         setData(res.data.data.applications);
       })
