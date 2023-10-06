@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "http://localhost:8000",
+  "proxy": "https://job-app-api-alpha.vercel.app",
   "private": true,
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
