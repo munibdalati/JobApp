@@ -16,11 +16,15 @@ const app = express();
 // Configure CORS
 app.use(cors(
   {
-    origin:['https://job-app-admin.vercel.app'],
+    origin: '*',
     methods:['GET', 'POST'],
-    credentials:true
+    credentials:true,
+    allowedHeaders: ['Content-Type', 'Authorization'] // Add your custom headers here
+
   }
 ));
+app.options('*', cors());
+
 
 // Connect DB
 connectDB();
