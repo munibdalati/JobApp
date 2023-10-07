@@ -38,7 +38,7 @@ app.use("/api/vacancy", vacancyRoutes);
 
 
 // Port
-const PORT =  process.env.PORT;
+const PORT = 8000 ||  process.env.PORT;
 
 const server = app.listen(PORT , () =>
   console.log(`Server running on port ${PORT}`)
