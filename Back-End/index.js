@@ -14,16 +14,7 @@ const cors = require("cors");
 const app = express();
 
 // Configure CORS
-app.use(cors(
-  {
-    origin: '*',
-    methods:['GET', 'POST'],
-    credentials:true,
-    allowedHeaders: ['Content-Type', 'Authorization'] // Add your custom headers here
-
-  }
-));
-app.options('*', cors());
+app.use(cors());
 
 
 // Connect DB
