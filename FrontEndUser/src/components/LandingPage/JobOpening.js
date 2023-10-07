@@ -22,7 +22,7 @@ function JobOpening() {
   useEffect(() => {
     // Make the API call within a useEffect hook
     axios
-      .get("http://localhost:8000/api/vacancy/allVacancies")
+      .get("https://job-app-api-alpha.vercel.app/api/vacancy/allVacancies")
       .then((res) => {
         setData(res.data.data.vacancies);
       })
