@@ -60,7 +60,7 @@ function FormComponent() {
 
     try {
       const response = await axios.post(
-        "https://job-app-api-alpha.vercel.app/application/addApplication",
+        "https://job-app-api-alpha.vercel.app/api/application/addApplication",
         {
           title,
           firstName,
