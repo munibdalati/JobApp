@@ -14,7 +14,6 @@ function App() {
         <Route path="/" Component={LandingPage}></Route>
         <Route path="/PersonalInfo/:title" Component={PersonalInfo}></Route>
         <Route path="Confirmation/" Component={Confirmation}></Route>
-
       </Routes>
     </BrowserRouter>
   );
