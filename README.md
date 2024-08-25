@@ -1,71 +1,101 @@
 # JobApp
 
-To run this project :
+Visit the Careerly website using the following links:
 
-1. Clone or download the project to your local computer.
-   
-2. Open the project on VS code or any other code runner.
+- **[User Website](https://job-app-user-nm3o61dgf-munibs-projects.vercel.app/)**
+- **[Admin Dashboard](https://job-app-admin.vercel.app/)**
 
-3. Request the author for config.env file to put it on backend folder before you start
 
-## First terminal / Backend
+## How to Run This Project
 
-1. Open terminal
+### 1. Clone or Download the Project
 
-2. cd to Backend folder
+- Clone the repository or download it to your local machine.
 
-3. Type this command to install all dependencies
-```
-npm i
-```
-4. Run the server by typing this command on the terminal (you have to ensure that port 5000 is empty on your computer):
-```
-npm start
-```
-5.This message should appear in your terminal which tell you that you have run the server correctly:
-```
-A masseage of Server running on port 5000
-MongoDB connected
-```
+### 2. Open the Project
 
-## Second terminal / FrontEndAdmin
+- Open the project in VS Code or your preferred code editor.
 
-1. Open another terminal
+### 3. Configure the Backend
 
-2. cd to FrontEndAdmin folder
+- Request the `config.env` file from the author.
+- Place the `config.env` file in the `Backend` folder before starting the project.
 
-3. Type this command to install all dependencies
-```
-npm i
-```
-4. Run the server by typing this command on the terminal :
-```
-npm start
-```
-5.This message should appear in your terminal which tell you that you have run the server correctly:
-```
-webpack compiled successfully
-```
+---
 
-## Third terminal / FrontEndUser
+## Running the Backend
 
-1. Open another terminal
+### First Terminal - Backend
 
-2. cd to FrontEndUser folder
+1. Open a terminal.
+2. Navigate to the `Backend` folder:
+    ```bash
+    cd Backend
+    ```
+3. Install all dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the server (ensure port 5000 is free):
+    ```bash
+    npm start
+    ```
+5. You should see the following message, indicating the server is running correctly:
+    ```bash
+    Server running on port 5000
+    MongoDB connected
+    ```
 
-3. Type this command to install all dependencies
-```
-npm i
-```
-4. Run the server by typing this command on the terminal :
-```
-npm start
-```
-5.This message should appear in your terminal which tell you that you have run the server correctly:
-```
-webpack compiled successfully
-```
+---
 
-If you have completed all those steps successfully two pages will open on your browser : the User Page and the Admin Dashboard
+## Running the Admin Frontend
+
+### Second Terminal - FrontEndAdmin
+
+1. Open another terminal.
+2. Navigate to the `FrontEndAdmin` folder:
+    ```bash
+    cd FrontEndAdmin
+    ```
+3. Install all dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the frontend server:
+    ```bash
+    npm start
+    ```
+5. You should see this message, confirming the frontend is running correctly:
+    ```bash
+    webpack compiled successfully
+    ```
+
+---
+
+## Running the User Frontend
+
+### Third Terminal - FrontEndUser
+
+1. Open another terminal.
+2. Navigate to the `FrontEndUser` folder:
+    ```bash
+    cd FrontEndUser
+    ```
+3. Install all dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the frontend server:
+    ```bash
+    npm start
+    ```
+5. You should see this message, confirming the frontend is running correctly:
+    ```bash
+    webpack compiled successfully
+    ```
+
+---
+
+If you've followed all the steps successfully, two pages should open in your browser: the User Page and the Admin Dashboard.
 
 
